@@ -11,7 +11,7 @@ namespace BusinessLayer.Abstract
     {
         List<Jobs> GetList();
         void JobsAdd(Jobs jobs);
-        Admin GetByID(int id);
+        Jobs GetByID(int id);
         void JobsDisable(Jobs jobs);
 
         void JobsEnable(Jobs jobs);

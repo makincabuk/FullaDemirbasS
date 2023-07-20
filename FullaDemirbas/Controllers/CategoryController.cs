@@ -32,22 +32,15 @@ namespace FullaDemirbas.Controllers
         [HttpPost]
         public ActionResult AddCategory(Category p)
         {
-            //cm.CategoryAddBl(p);
-            CategoryValidator categoryValidator= new CategoryValidator();
-            ValidationResult result = categoryValidator.Validate(p);
-            if(result.IsValid)
-            {
-                cm.CategoryAdd(p);
-                return RedirectToAction("GetCategoryList");
-            }
-            else
-            {
-                foreach (var item in result.Errors)
-                {
-                    ModelState.AddModelError(item.PropertyName, item.ErrorMessage);
-                }
-            }
-            return View();
+            cm.CategoryAdd(j);
+            return RedirectToAction("Index");
+        }
+        public ActionResult DisableStore(int id)
+        {
+            var storevalue = SM.GetByID(id);
+            storevalue.StoreStatus = false;
+            SM.StoreUpdate(storevalue);
+            return RedirectToAction("Index");
         }
     }
 }

@@ -76,6 +76,7 @@
     <Compile Include="EntityFramework\EfBrandDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfFixtureDal.cs" />
+    <Compile Include="EntityFramework\EfJobsDal.cs" />
     <Compile Include="EntityFramework\EfModelDal.cs" />
     <Compile Include="EntityFramework\EfStoreDal.cs" />
     <Compile Include="EntityFramework\EfSubCategoryDal.cs" />
