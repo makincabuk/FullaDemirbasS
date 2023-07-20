@@ -1,0 +1,208 @@
+﻿
+@using EntityLayer.Concrete
+@model List<User>
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<body class="hold-transition sidebar-mini">
+    <!-- /.navbar -->
+    <!-- Content Header (Page header) -->
+
+    <br />
+    <p align="right"><a href="/User/AddUser" class="btn btn-info ">Kullanıcı Ekle</a></p>
+    <br />
+    <section class="content-header">
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>Kullanıcı Sayfası</h1>
+                </div>
+
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
+    <!-- Main content -->
+    <!-- /.content -->
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Aktif Kullanıcılar</h1>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+
+                        <section class="content">
+                            <!-- Default box -->
+                            <div class="card card-solid">
+                                <div class="card-body pb-0">
+                                    <div class="row d-flex align-items-stretch">
+                                        @foreach (var item in Model)
+                                        {
+
+                                            if (item.UserStatus )
+                                            {
+
+                                                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                                                    <div class="card bg-light">
+                                                        <div class="card-header text-muted border-bottom-0">
+                                                            @item.StoreID
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <h2 class="lead"><b>@item.UserName</b></h2>
+                                                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Durumu  @item.UserStatus</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Adı:  @item.Uname</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Soyadı:  @item.USurName</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Mail:  @item.UserMail</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone :  @item.UserPhone</li>
+                                                                    </ul>
+                                                                </div>
+                                                                @*<div class="col-5 text-center">
+                                                <img src="~/AdminLTE-3.0.4/dist/img/defaultuser.png" alt="" class="img-circle img-fluid">
+                                            </div>*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <div class="text-right">
+                                                                @*<a href="#" class="btn btn-sm bg-teal">
+                                                                    <i class="fas fa-comments">Kullanıcı Talepleri</i>
+                                                                </a>*@
+                                                                <i></i>
+                                                                <a href="/User/EditUser/@item.UserID" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-user"></i> Profil Düzenle
+                                                                </a>
+                                                                <a class="btn btn-danger btn-sm" href="/User/DisableleUser/@item.UserID">
+                                                                    <i class="fas fa-trash">
+                                                                    </i>
+                                                                    Pasif Et
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /.card -->
+
+                                            }
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+    <br /><br />
+    <section class="content">
+        <!-- Default box -->
+        <div class="card card">
+            <div class="card-header">
+                <h3 class="card-title">Pasif Kullanıcılar</h3>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+                <table class="table table-striped projects">
+                    <thead>
+
+                    </thead>
+                    <tbody>
+                        <section class="content">
+                            <!-- Default box -->
+                            <div class="card card-solid">
+                                <div class="card-body pb-0">
+                                    <div class="row d-flex align-items-stretch">
+                                        @foreach (var item in Model)
+                                        {
+
+                                            if (item.UserStatus == false)
+                                            {
+
+                                                <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                                                    <div class="card bg-light">
+                                                        <div class="card-header text-muted border-bottom-0">
+                                                            @item.StoreID
+                                                        </div>
+                                                        <div class="card-body pt-0">
+                                                            <div class="row">
+                                                                <div class="col-12">
+                                                                    <h2 class="lead"><b>@item.UserName</b></h2>
+                                                                    <ul class="ml-4 mb-0 fa-ul text-muted">
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Durumu  @item.UserStatus</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Adı:  @item.Uname</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Soyadı:  @item.USurName</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-building"></i></span> Mail:  @item.UserMail</li>
+                                                                        <li class="small"><span class="fa-li"><i class="fas fa-lg fa-phone"></i></span> Phone :  @item.UserPhone</li>
+                                                                    </ul>
+                                                                </div>
+                                                                @*<div class="col-5 text-center">
+                                                                        <img src="~/AdminLTE-3.0.4/dist/img/defaultuser.png" alt="" class="img-circle img-fluid">
+                                                                    </div>*@
+                                                            </div>
+                                                        </div>
+                                                        <div class="card-footer">
+                                                            <div class="text-right">
+                                                                @*<a href="#" class="btn btn-sm bg-teal">
+                                                                    <i class="fas fa-comments">Kullanıcı Talepleri</i>
+                                                                </a>*@
+                                                                <a href="/User/EditUser/@item.UserID" class="btn btn-sm btn-primary">
+                                                                    <i class="fas fa-user"></i> Profil Düzenle
+                                                                </a>
+                                                                <a class="btn btn-success btn-sm" href="/User/EnableUser/@item.UserID">
+                                                                    <i class="fas fa-trash">
+                                                                    </i>
+                                                                    Aktif Et
+                                                                </a>
+                                                            </div>
+
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!-- /.card -->
+
+                                            }
+                                        }
+
+                                    </div>
+                                </div>
+                            </div>
+                        </section>
+                    </tbody>
+                </table>
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+</body>
+        </html>

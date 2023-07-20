@@ -1,0 +1,19 @@
+﻿@model EntityLayer.Concrete.Brand
+@{
+    ViewBag.Title = "AddBrand";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>AddBrand</h2>
+
+
+@using (Html.BeginForm("AddBrand", "Brand", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Marka Adı Girin :")
+        @Html.TextBoxFor(x => x.BrandName, new { @class = "form-control" })
+    
+        <br />
+        <button class="btn btn-info">Alt Kategori Ekle</button>
+    </div>
+}

@@ -1,0 +1,80 @@
+﻿@using EntityLayer.Concrete
+@model List<Fixture>
+@{
+    ViewBag.Title = "FixtureBySubCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<br />
+<body class="hold-transition sidebar-mini">
+    <section class="content">
+        <div class="row">
+            <div class="col-12">
+                <div class="card">
+                    <div class="card-header">
+                        <h3 class="card-title"></h3>
+                    </div>
+                    <!-- /.card-header -->
+                    <div class="card-body">
+                        <table id="example2" class="table table-bordered table-hover">
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Demirbaş Adı</th>
+                                    <th>Demirbaş Seri No</th>
+                                    <th>Demirbaş Kullanıcı</th>
+                                    <th>Demirbaş Alt kategori</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @foreach (var item in Model)
+                                {
+
+                                    <tr>
+                                        <th>@item.FixtureId</th>
+                                        <th>@item.FixtureName</th>
+                                        <th>@item.FixtureSeriNo</th>
+                                        <th>@item.User.UserName</th>
+                                        <th>@item.SubCategory.SubCategoryName</th>
+
+                                    </tr>
+
+                                }
+                            </tbody>
+                            
+                        </table>
+                    </div>
+                    <!-- /.card-body -->
+                </div>
+                <!-- /.card -->
+
+                <!-- /.card -->
+            </div>
+            <!-- /.col -->
+        </div>
+        <!-- /.row -->
+    </section>
+    <script>
+        $(function () {
+            $("#example1").DataTable({
+                "responsive": true,
+                "autoWidth": false,
+            });
+            $('#example2').DataTable({
+                "paging": true,
+                "lengthChange": false,
+                "searching": false,
+                "ordering": true,
+                "info": true,
+                "autoWidth": false,
+                "responsive": true,
+            });
+        });</script>
+
+
+
+</body>
+</html>

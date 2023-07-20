@@ -1,0 +1,26 @@
+﻿@model EntityLayer.Concrete.SubCategory
+@{
+    ViewBag.Title = "AddSubCategory";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Alt Katagori Ekle</h2>
+
+@using (Html.BeginForm("AddSubCategory", "SubCategory", FormMethod.Post))
+{
+<div class="form-group">
+    @Html.Label("Alt Katagori Adı :")
+    @Html.TextBoxFor(x => x.SubCategoryName, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SubCategoryName)
+    <br />
+    @Html.Label("Alt Kategori Açıklması :")
+    @Html.TextBoxFor(x => x.SubCategoryDescription, new { @class = "form-control" })
+    @Html.ValidationMessageFor(x => x.SubCategoryDescription)
+    <br />
+    @Html.Label("Kategori Seçiniz :")
+    @Html.DropDownListFor(x => x.CategoryId, (List<SelectListItem>)ViewBag.vlsc, new { @class = "form form-control" })
+    @Html.ValidationMessageFor(x => x.CategoryId)
+    <br />
+    <button class="btn btn-info">Alt Kategori Ekle</button>
+</div>
+}

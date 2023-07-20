@@ -1,0 +1,27 @@
+﻿@model EntityLayer.Concrete.Store
+
+@{
+    ViewBag.Title = "EditStore";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Mağaza Güncelleme</h2>
+
+
+
+@using (Html.BeginForm("EditStore", "Store", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Store ID")
+        @Html.TextBoxFor(x => x.StoreID, new { @class = "form-control", @readonly = false })
+        <br />
+        @Html.Label("Mağaza Adı")
+        @Html.TextBoxFor(x => x.StoreName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Durumu")
+        @Html.TextBoxFor(x => x.StoreStatus, new { @class = "form-control", @readonly = false })
+        <br />
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>
+}

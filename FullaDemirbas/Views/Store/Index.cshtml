@@ -1,0 +1,194 @@
+﻿
+@using EntityLayer.Concrete
+@model List<Store>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<br />
+<p align="right">
+    <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">
+        Mağaza Ekle
+    </button>
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Mağaza Bilgilerini Giriniz
+                </div>
+                <form method="post" action="/Store/AddStore">
+                    <div class="modal-body">
+                        <label>Mağaza Adını</label>
+                        <input type="text" name="StoreName" class="form-control" />
+                        <br />
+                        <button class="btn btn-info">Kaydet</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</p>
+
+
+
+<!DOCTYPE html>
+<html>
+
+<body class="hold-transition sidebar-mini">
+
+    <!-- Main content -->
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Aktif Mağazalar</h1>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+
+
+                <section class="content">
+                    <!-- Default box -->
+                    @*<div class="card card-solid">*@
+                    <div class="card-body pb-0">
+                        <div class="row d-flex align-items-stretch">
+                            @foreach (var item in Model)
+                            {
+                                if (item.StoreStatus)
+                                {
+                                    <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                                        <div class="card bg-light">
+                                            <div class="card-header text-muted border-bottom-0">
+                                                <b>@item.StoreName</b>
+                                            </div>
+                                            <div class="card-body pt-0">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="text-right">
+                                                    <a href="#" class="btn btn-sm bg-gradient-blue">
+                                                        <i class="fas fa-user-alt">     Personeller</i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm bg-olive">
+                                                        <i class="fas fa-atom">   Demirbaşlar</i>
+                                                    </a>
+                                                    @*btn-primary*@
+                                                    <a href="/Store/EditStore/@item.StoreID" class="btn btn-sm btn-info ">
+                                                        <i class="fas fa-store"></i>  Düzenle
+                                                    </a>
+                                                    <a class="btn btn-danger btn-sm" href="/Store/DisableStore/@item.StoreID">
+                                                        <i class="fas fa-trash">
+                                                        </i>
+                                                        Pasif Et
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+                                }
+
+                            }
+                        </div>
+                    </div>@*
+                        </div>*@
+                    <!-- /.card -->
+                </section>
+
+
+
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+    <br /><br />
+    <section class="content">
+        <!-- Default box -->
+        <div class="card">
+            <div class="card-header">
+                <h1 class="card-title">Pasif Mağazalar</h1>
+                <div class="card-tools">
+                    <button type="button" class="btn btn-tool" data-card-widget="collapse" data-toggle="tooltip" title="Collapse">
+                        <i class="fas fa-plus"></i>
+                    </button>
+                    <button type="button" class="btn btn-tool" data-card-widget="remove" data-toggle="tooltip" title="Remove">
+                        <i class="fas fa-times"></i>
+                    </button>
+                </div>
+            </div>
+            <div class="card-body p-0">
+
+
+                <section class="content">
+                    <!-- Default box -->
+                    @*<div class="card card-solid">*@
+                    <div class="card-body pb-0">
+                        <div class="row d-flex align-items-stretch">
+                            @foreach (var item in Model)
+                            {
+                                if (item.StoreStatus == false)
+                                {
+                                    <div class="col-12 col-sm-6 col-md-4 d-flex align-items-stretch">
+                                        <div class="card bg-light">
+                                            <div class="card-header text-muted border-bottom-0">
+                                                <b>@item.StoreName</b>
+                                            </div>
+                                            <div class="card-body pt-0">
+                                                <div class="row">
+                                                    <div class="col-7">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="card-footer">
+                                                <div class="text-right">
+                                                    <a href="#" class="btn btn-sm bg-gradient-blue">
+                                                        <i class="fas fa-user-alt">     Personeller</i>
+                                                    </a>
+                                                    <a href="#" class="btn btn-sm bg-olive">
+                                                        <i class="fas fa-atom">   Demirbaşlar</i>
+                                                    </a>
+                                                    @*btn-primary*@
+                                                    <a href="/Store/EditStore/@item.StoreID" class="btn btn-sm btn-info ">
+                                                        <i class="fas fa-store"></i>  Düzenle
+                                                    </a>
+                                                    <a class="btn btn-success btn-sm" href="/Store/EnableStore/@item.StoreID">
+                                                        <i class="fas fa-trash-restore-alt">
+                                                        </i>
+                                                        Aktif Et
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                                        </div>
+                                    </div>
+
+                                }
+
+                            }
+                        </div>
+                    </div>@*
+                        </div>*@
+                    <!-- /.card -->
+                </section>
+
+
+
+            </div>
+            <!-- /.card-body -->
+        </div>
+        <!-- /.card -->
+    </section>
+</body>
+</html>
