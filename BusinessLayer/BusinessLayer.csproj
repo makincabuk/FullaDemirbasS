@@ -73,6 +73,7 @@
     <Compile Include="Concrete\BrandManeger.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\FixtureManager.cs" />
+    <Compile Include="Concrete\JobsManager.cs" />
     <Compile Include="Concrete\ModelManeger.cs" />
     <Compile Include="Concrete\StoreManeger.cs" />
     <Compile Include="Concrete\SubCategoryManager.cs" />

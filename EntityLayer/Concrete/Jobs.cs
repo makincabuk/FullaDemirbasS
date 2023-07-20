@@ -7,7 +7,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace EntityLayer.Concrete
 {
-    class Jobs
+    public class Jobs
     {
         [Key]
         public int JobsID { get; set; }
@@ -15,8 +15,6 @@ namespace EntityLayer.Concrete
         public string JobsName { get; set; }
         [StringLength(200)]
         public string JobsDescription { get; set; }
-        [StringLength(200)]
-
         public bool JobsStatus { get; set; }
     }
 }

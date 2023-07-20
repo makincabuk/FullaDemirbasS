@@ -21,5 +21,7 @@ namespace DataAccessLayer.Concrete
         public DbSet<Model> Models { get; set; }
 
         public DbSet<Admin> Admins { get; set; }
+
+        public DbSet<Jobs> Jobs { get; set; }
     }
 }
