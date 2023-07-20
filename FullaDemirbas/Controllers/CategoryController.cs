@@ -28,19 +28,20 @@ namespace FullaDemirbas.Controllers
         public ActionResult AddCategory()
         {
             return View();
-        }
-        [HttpPost]
-        public ActionResult AddCategory(Category p)
-        {
-            cm.CategoryAdd(j);
-            return RedirectToAction("Index");
-        }
-        public ActionResult DisableStore(int id)
-        {
-            var storevalue = SM.GetByID(id);
-            storevalue.StoreStatus = false;
-            SM.StoreUpdate(storevalue);
-            return RedirectToAction("Index");
+            //}
+            //[HttpPost]
+            //public ActionResult AddCategory(Category p)
+            //{
+            //    cm.CategoryAdd(j);
+            //    return RedirectToAction("Index");
+            //}
+            //public ActionResult DisableStore(int id)
+            //{
+            //    var storevalue = SM.GetByID(id);
+            //    storevalue.StoreStatus = false;
+            //    SM.StoreUpdate(storevalue);
+            //    return RedirectToAction("Index");
+            //}
         }
     }
 }
