@@ -12,6 +12,7 @@ namespace FullaDemirbas.Controllers
     public class ModelController : Controller
     {
         ModelManeger MM = new ModelManeger(new EfModelDal());
+        BrandManeger BM = new BrandManeger(new EfBrandDal());
         // GET: Model
         public ActionResult Index()
         {
@@ -21,6 +22,14 @@ namespace FullaDemirbas.Controllers
         [HttpGet]
         public ActionResult AddModel()
         {
+            List<SelectListItem> valuemodel = (from x in BM.GetList()/*.Where(x => x.CategoryStatus == true)*/
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.BrandName,
+                                                      Value = x.BrandID.ToString()
+                                                  }
+                                                ).ToList();
+            ViewBag.vlsc = valuemodel;
             return View();
         }
         [HttpPost]
@@ -46,10 +55,10 @@ namespace FullaDemirbas.Controllers
         [HttpGet]
         public ActionResult EditModel(int id)
         {
-            List<SelectListItem> valuemodel = (from x in MM.GetList().Where(x => x.ModelStatus == true)*/
+            List<SelectListItem> valuemodel = (from x in BM.GetList().Where(x => x.BrandStatus == true)
                                                   select new SelectListItem
                                                   {
-                                                      Text = x.Brand.BrandName,
+                                                      Text = x.BrandName,
                                                       Value = x.BrandID.ToString()
                                                   }
                                                   ).ToList();

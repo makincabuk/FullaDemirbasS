@@ -1,0 +1,20 @@
+﻿@model EntityLayer.Concrete.Model
+@{
+    ViewBag.Title = "AddModel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Model Ekle</h2>
+
+@using (Html.BeginForm("AddModel", "Model", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Model Adı :")
+        @Html.TextBoxFor(x => x.ModelName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Marka Seçiniz :")
+        @Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.vlsc, new { @class = "form form-control" })
+
+        <br />
+        <button class="btn btn-info">Model Ekle</button>
+    </div>}

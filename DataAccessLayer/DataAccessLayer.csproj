@@ -89,6 +89,10 @@
     <Compile Include="Migrations\202307201136279_Up_Add_Jobs.designer.cs">
       <DependentUpon>202307201136279_Up_Add_Jobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202307210842588_Up_Brand_Icolletion.cs" />
+    <Compile Include="Migrations\202307210842588_Up_Brand_Icolletion.designer.cs">
+      <DependentUpon>202307210842588_Up_Brand_Icolletion.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -108,6 +112,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202307201136279_Up_Add_Jobs.resx">
       <DependentUpon>202307201136279_Up_Add_Jobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307210842588_Up_Brand_Icolletion.resx">
+      <DependentUpon>202307210842588_Up_Brand_Icolletion.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
