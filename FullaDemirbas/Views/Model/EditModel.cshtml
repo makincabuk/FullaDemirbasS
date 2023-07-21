@@ -1,0 +1,25 @@
+﻿@model EntityLayer.Concrete.Model
+
+@{
+    ViewBag.Title = "EditModel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+
+<h2>Model Güncelleme sayfası</h2>
+@using (Html.BeginForm("EditModel", "Model", FormMethod.Post))
+{
+    <div class="form-group">
+        @Html.Label("Model ID :")
+        @Html.TextBoxFor(x => x.ModelID, new { @class = "form-control", @readonly = false })
+        <br />
+        @Html.Label("Model Adı :")
+        @Html.TextBoxFor(x => x.ModelName, new { @class = "form-control" })
+        <br />
+        @Html.Label("Marka Adı :")
+        @Html.DropDownListFor(x => x.BrandID, (List<SelectListItem>)ViewBag.vlsc, new { @class = "form-control" })
+        <br />
+        <br />
+        <button class="btn btn-success">Güncelle</button>
+    </div>}
+

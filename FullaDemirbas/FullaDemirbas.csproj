@@ -2317,6 +2317,7 @@
     <Content Include="Views\Login\Index.cshtml" />
     <Content Include="Views\Model\Index.cshtml" />
     <Content Include="Views\Jobs\Index.cshtml" />
+    <Content Include="Views\Model\EditModel.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

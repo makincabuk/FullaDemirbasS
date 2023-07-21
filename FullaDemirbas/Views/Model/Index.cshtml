@@ -5,38 +5,25 @@
     Layout = "~/Views/Shared/_AdminLayout.cshtml";
 }
 <br />
-<p align="right">
-    <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">
-        Model Ekle
-    </button>
-    <div class="modal" id="Modal1">
-        <div class="modal-dialog">
-            <div class="modal-content">
-                <div class="modal-header">
-                    Model Bilgilerini Giriniz
-                </div>
-                <form method="post" action="/Store/AddStore">
-                    <div class="modal-body">
-                        <label>Model Adı</label>
-                        <input type="text" name="ModelName" class="form-control" />
-                        <br />
-                        <label>Marka Seçiniz</label>
-                        <input type="text" name="ModelName" class="form-control" />
-                        <br />
-                        <button class="btn btn-info">Kaydet</button>
-                    </div>
-                </form>
-            </div>
-        </div>
-    </div>
-</p>
 
 
 <!DOCTYPE html>
 <html>
 
 <body class="hold-transition sidebar-mini">
-
+    <section class="content-header">
+        <p align="right">
+            <a href="/Model/AddModel" class="btn btn-info">Model Ekle</a>
+        </p>
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>
+                    </h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
     <!-- Main content -->
     <section class="content">
         <!-- Default box -->
@@ -74,35 +61,34 @@
                             {
 
 
-                                <tr>
-                                    <td>
-                                        @item.ModelID
-                                    </td>
-                                    <td>
-                                        @item.ModelName
-                                    </td>
-                                    @*<td class="project-state">
-                                            <span class="badge badge-success">Success</span>
-                                        </td>*@
-                                    <td class="project-actions text-right">
-                                        <a class="btn btn-primary btn-sm" href="/Fixture/FixtureBySubCategory/">
-                                            <i class="fas fa-folder">
-                                            </i>
-                                            Demirbaşlar
-                                        </a>
-                                        <a class="btn btn-info btn-sm" href="/Model/EditModel/@item.ModelID">
-                                            <i class="fas fa-pencil-alt">
-                                            </i>
-                                            Düzenle
-                                        </a>
-                                        <a class="btn btn-danger btn-sm" href="/Model/DisableModel/@item.ModelID">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Pasif Et
-                                        </a>
-                                    </td>
-                                </tr>
-                            }
+            <tr>
+                <td>
+                    @item.ModelID
+                </td>
+                <td>
+                    @item.ModelName
+                </td>
+                @*<td class="project-state">
+                        <span class="badge badge-success">Success</span>
+                    </td>*@
+                <td class="project-actions text-right">
+                    <a class="btn btn-primary btn-sm" href="/Fixture/FixtureBySubCategory/">
+                        <i class="fas fa-folder">
+                        </i>
+                        Demirbaşlar
+                    </a>
+                    <a class="btn btn-info btn-sm" href="/Model/EditModel/@item.ModelID">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Düzenle
+                    </a>
+                    <a class="btn btn-danger btn-sm" href="/Model/DisableModel/@item.ModelID">
+                        <i class="fas fa-trash">
+                        </i>
+                        Pasif Et
+                    </a>
+                </td>
+            </tr>}
                         }
 
                     </tbody>
@@ -149,35 +135,34 @@
                             {
 
 
-                                <tr>
-                                    <td>
-                                        @item.ModelID
-                                    </td>
-                                    <td>
-                                        @item.ModelName
-                                    </td>
-                                    @*<td class="project-state">
-                                            <span class="badge badge-success">Success</span>
-                                        </td>*@
-                                    <td class="project-actions text-right">
-                                        <a class="btn btn-primary btn-sm" href="/Fixture/FixtureBySubCategory/">
-                                            <i class="fas fa-folder">
-                                            </i>
-                                            Demirbaşlar
-                                        </a>
-                                        <a class="btn btn-info btn-sm" href="/Model/EditModel/@item.ModelID">
-                                            <i class="fas fa-pencil-alt">
-                                            </i>
-                                            Düzenle
-                                        </a>
-                                        <a class="btn btn-success btn-sm" href="/Model/EnableModel/@item.ModelID">
-                                            <i class="fas fa-trash">
-                                            </i>
-                                            Aktif Et
-                                        </a>
-                                    </td>
-                                </tr>
-                            }
+            <tr>
+                <td>
+                    @item.ModelID
+                </td>
+                <td>
+                    @item.ModelName
+                </td>
+                @*<td class="project-state">
+                        <span class="badge badge-success">Success</span>
+                    </td>*@
+                <td class="project-actions text-right">
+                    <a class="btn btn-primary btn-sm" href="/Fixture/FixtureBySubCategory/">
+                        <i class="fas fa-folder">
+                        </i>
+                        Demirbaşlar
+                    </a>
+                    <a class="btn btn-info btn-sm" href="/Model/EditModel/@item.ModelID">
+                        <i class="fas fa-pencil-alt">
+                        </i>
+                        Düzenle
+                    </a>
+                    <a class="btn btn-success btn-sm" href="/Model/EnableModel/@item.ModelID">
+                        <i class="fas fa-trash">
+                        </i>
+                        Aktif Et
+                    </a>
+                </td>
+            </tr>}
                         }
 
                     </tbody>

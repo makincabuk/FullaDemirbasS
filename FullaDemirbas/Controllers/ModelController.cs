@@ -46,8 +46,16 @@ namespace FullaDemirbas.Controllers
         [HttpGet]
         public ActionResult EditModel(int id)
         {
-            var modelvalue = MM.GetByID(id);
-            return View(modelvalue);
+            List<SelectListItem> valuemodel = (from x in MM.GetList().Where(x => x.ModelStatus == true)*/
+                                                  select new SelectListItem
+                                                  {
+                                                      Text = x.Brand.BrandName,
+                                                      Value = x.BrandID.ToString()
+                                                  }
+                                                  ).ToList();
+            ViewBag.vlsc = valuemodel;
+            var modelValue = MM.GetByID(id);
+            return View(modelValue);
         }
         [HttpPost]
         public ActionResult EditModel(Model m)
