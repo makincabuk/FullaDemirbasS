@@ -13,6 +13,6 @@ namespace EntityLayer.Concrete
 
         public bool StoreStatus { get; set; }
 
-        public ICollection<User> User { get; set; }
+        public ICollection<User> user { get; set; }
     }
 }

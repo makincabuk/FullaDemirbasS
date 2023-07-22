@@ -3,6 +3,8 @@ using BusinessLayer.ValidationRules;
 using DataAccessLayer.EntityFramework;
 using EntityLayer.Concrete;
 using FluentValidation.Results;
+using System.Collections.Generic;
+using System.Linq;
 using System.Web.Mvc;
 
 namespace FullaDemirbas.Controllers
@@ -11,6 +13,7 @@ namespace FullaDemirbas.Controllers
     {
         UserManager um = new UserManager(new EfUserDal());
         UserValidator uservalidator = new UserValidator();
+        StoreManeger SM = new StoreManeger(new EfStoreDal());
         public ActionResult Index()
         {
             var UserValues = um.GetList();
@@ -19,6 +22,14 @@ namespace FullaDemirbas.Controllers
         [HttpGet]
         public ActionResult AddUser()
         {
+            List<SelectListItem> valuestore = (from x in SM.GetList().Where(x => x.StoreStatus == true)
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.StoreName,
+                                                   Value = x.StoreID.ToString()
+                                               }
+                                                ).ToList();
+            ViewBag.vlsc = valuestore;
             return View();
         }
 
