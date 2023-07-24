@@ -1,0 +1,33 @@
+﻿@model EntityLayer.Concrete.FixtureModel
+@{
+    ViewBag.Title = "AddFixtureModel";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<p align="right">
+    <button class="btn btn-info" data-toggle="modal" data-target="#Modal1">
+        Demirbaş Model Ekle
+    </button>
+    <div class="modal" id="Modal1">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    Model Bilgilerini Giriniz
+                </div>
+                 
+                @using (Html.BeginForm("AddFixtureModel", "FixtureModel", FormMethod.Post))
+                {
+                    int a=0;
+            <div class="form-group">
+                @Html.Label("Model Adı :")
+                @Html.TextBoxFor(x => x.FixtureModelName, new { @class = "form-control" })
+                <br />
+                @Html.Label("Alt Kategori Seçiniz :")
+                @Html.DropDownListFor(x => x.SubCategory.CategoryId, (List<SelectListItem>)ViewBag.VbSubCategory, new { @class = "form form-control" })
+                <br />    <br />
+                <br />
+                <button class="btn btn-info">Model Ekle</button>
+            </div>}
+            </div>
+        </div>
+    </div>
+</p>

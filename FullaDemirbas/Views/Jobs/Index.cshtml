@@ -11,15 +11,27 @@
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">
-                    Görev Bilgilerini Giriniz
+                    İş Bilgilerini Giriniz
                 </div>
                 <form method="post" action="/Jobs/AddJobs/">
                     <div class="modal-body">
-                        <label>Görev Adı</label>
-                        <input type="text" name="JobsName" class="form-control" />
+                        @*<label>Görev Adı</label>*@
+                        @*<input type="text" name="JobsName" class="form-control" />*@
+                        @Html.Label("İş Türü : ")
+                        @Html.DropDownList("JobsName", new List<SelectListItem>
+{
+    new SelectListItem { Text = "Gönderim", Value = "GÖNDERİM"},
+    new SelectListItem { Text = "Gelecek", Value = "GELECEK"}
+    }, "Seçiniz", new { @class = "form-control" })
                         <br />
-                        <label>Görev Açıklaması</label>
+                        <label>İş Açıklaması</label>
                         <input type="text" name="JobsDescription" class="form-control" />
+                        <br />@Html.Label("Durumu : ")
+                        @Html.DropDownList("JobsStatus", new List<SelectListItem>
+{
+    new SelectListItem { Text = "Aktif", Value = "True"},
+    new SelectListItem { Text = "Pasif", Value = "False"}
+    },/* "Seçiniz",*/ new { @class = "form-control" })
                         <br />
                         <button class="btn btn-info">Kaydet</button>
                     </div>
@@ -97,11 +109,11 @@
                 <td>
                     @if (item.JobsName == "GELECEK")
                     {
-                        <img src="~/AdminLTE-3.0.4/dist/img/GELECEK.png" width="100" height="100" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-             style="opacity: .8">}
+<img src="~/AdminLTE-3.0.4/dist/img/GELECEK.png" width="50" height="50" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+     style="opacity: .8">}
 else
-{ <img src="~/AdminLTE-3.0.4/dist/img/GIDECEK.png" alt="AdminLTE Logo" width="100" height="100" class="brand-image img-circle elevation-3"
-       style="opacity: .8">                    }
+{ <img src="~/AdminLTE-3.0.4/dist/img/GIDECEK.png" alt="AdminLTE Logo" width="50" height="50" class="brand-image img-circle elevation-3"
+       style="opacity: .8">}
                 </td>
                 <td>
                     @item.JobsName
@@ -126,9 +138,8 @@ else
                         İş Tamamlandı
                     </a>
                 </td>
-            </tr>
-}
-    }
+            </tr>}
+                        }
 
                     </tbody>
                 </table>
@@ -183,11 +194,11 @@ else
                 <td>
                     @if (item.JobsName == "GELECEK")
                     {
-                <img src="~/AdminLTE-3.0.4/dist/img/GELECEK.png" width="100" height="100" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
-                     style="opacity: .8">}
-            else
-            { <img src="~/AdminLTE-3.0.4/dist/img/GIDECEK.png" alt="AdminLTE Logo" width="100" height="100" class="brand-image img-circle elevation-3"
-                   style="opacity: .8">}
+<img src="~/AdminLTE-3.0.4/dist/img/GELECEK.png" width="50" height="50" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
+     style="opacity: .8">}
+else
+{ <img src="~/AdminLTE-3.0.4/dist/img/GIDECEK.png" alt="AdminLTE Logo" width="50" height="50" class="brand-image img-circle elevation-3"
+       style="opacity: .8">}
                 </td>
                 <td>
                     @item.JobsName
@@ -212,9 +223,8 @@ else
                         Aktif Et
                     </a>
                 </td>
-            </tr>
-}
-    }
+            </tr>}
+                        }
 
                     </tbody>
                 </table>

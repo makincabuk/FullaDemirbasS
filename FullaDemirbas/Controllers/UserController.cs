@@ -54,8 +54,16 @@ namespace FullaDemirbas.Controllers
         [HttpGet]
         public ActionResult EditUser(int id)
         {
-            var uservalue = um.GetByID(id);
-            return View(uservalue);
+
+            List<SelectListItem> valuestore = (from x in SM.GetList().Where(x => x.StoreStatus == true)
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.StoreName,
+                                                   Value = x.StoreID.ToString()
+                                               }
+                                                ).ToList();
+            ViewBag.vlsc = valuestore;
+            return View();
         }
         [HttpPost]
         public ActionResult EditUser(User U)

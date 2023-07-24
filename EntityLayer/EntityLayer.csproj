@@ -56,6 +56,7 @@
     <Compile Include="Concrete\Brand.cs" />
     <Compile Include="Concrete\Category.cs" />
     <Compile Include="Concrete\Fixture.cs" />
+    <Compile Include="Concrete\FixtureModel.cs" />
     <Compile Include="Concrete\Jobs.cs" />
     <Compile Include="Concrete\Model.cs" />
     <Compile Include="Concrete\Store.cs" />

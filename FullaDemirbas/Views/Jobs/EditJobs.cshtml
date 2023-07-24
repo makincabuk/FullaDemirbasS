@@ -1,0 +1,32 @@
+﻿@model EntityLayer.Concrete.Jobs
+@{
+    ViewBag.Title = "EditJobs";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+<h2>İş Güncelleme sayfası</h2>
+@using (Html.BeginForm("EditJobs", "Jobs", FormMethod.Post))
+{@Html.Label("İş ID :")
+        @Html.TextBoxFor(x => x.JobsID, new { @class = "form-control", @readonly = false })
+        
+<div class="form-group">
+    @Html.Label("İş Türü : ")
+    @Html.DropDownList("JobsName", new List<SelectListItem>
+{
+new SelectListItem { Text = "Gönderim", Value = "GÖNDERİM"},
+new SelectListItem { Text = "Gelecek", Value = "GELECEK"}
+}, new { @class = "form-control" })
+    <br />
+    @Html.Label("İş Açıklaması :")
+    @Html.TextBoxFor(x => x.JobsDescription, new { @class = "form-control" })
+    <br />
+    @Html.Label("Durumu : ")
+    @Html.DropDownList("JobsStatus", new List<SelectListItem>
+{
+new SelectListItem { Text = "Aktif", Value = "True"},
+new SelectListItem { Text = "Pasif", Value = "False"}
+},/* "Seçiniz",*/ new { @class = "form-control" })
+    <br />
+    <button class="btn btn-success">Güncelle</button>
+</div>
+}
+

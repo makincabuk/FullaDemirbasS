@@ -63,6 +63,7 @@
     <Compile Include="Abstract\IAdminService.cs" />
     <Compile Include="Abstract\IBrandService.cs" />
     <Compile Include="Abstract\ICategoryService.cs" />
+    <Compile Include="Abstract\IFixtureModelService.cs" />
     <Compile Include="Abstract\IFixtureService.cs" />
     <Compile Include="Abstract\IJobsService.cs" />
     <Compile Include="Abstract\IModelService.cs" />
@@ -73,6 +74,7 @@
     <Compile Include="Concrete\BrandManeger.cs" />
     <Compile Include="Concrete\CategoryManager.cs" />
     <Compile Include="Concrete\FixtureManager.cs" />
+    <Compile Include="Concrete\FixtureModelManager.cs" />
     <Compile Include="Concrete\JobsManager.cs" />
     <Compile Include="Concrete\ModelManeger.cs" />
     <Compile Include="Concrete\StoreManeger.cs" />

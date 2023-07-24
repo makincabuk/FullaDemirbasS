@@ -36,7 +36,7 @@
     @Html.ValidationMessageFor(x => x.UserPassword)
     <br />
     @Html.Label("Mağaza Seçiniz : ")
-    @Html.DropDownListFor(x => x.StoreID, (List<SelectListItem>)ViewBag.vlsc, new { @class = "form form-control" })
+    @Html.DropDownListFor(x => x.StoreID, (List<SelectListItem>)ViewBag.vlsc, "Seçiniz", new { @class = "form form-control" })
     @Html.ValidationMessageFor(x => x.StoreID)
     <br />
     @Html.Label("Durumu : ")

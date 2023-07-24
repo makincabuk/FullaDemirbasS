@@ -31,6 +31,19 @@ namespace FullaDemirbas.Controllers
             jm.JobsAdd(j);
             return RedirectToAction("Index");
         }
+        [HttpGet]
+        public ActionResult EditJobs(int id)
+        {
+            var jobsvalue = jm.GetByID(id);
+            return View(jobsvalue);
+        }
+        [HttpPost]
+        public ActionResult EditJobs(Jobs J)
+        {
+
+                jm.JobsUpdate(J);
+                return RedirectToAction("Index");
+        }
         public ActionResult DisableJobs(int id)
         {
             var jobsvalue = jm.GetByID(id);

@@ -9,34 +9,34 @@ using System.Threading.Tasks;
 
 namespace DataAccessLayer.Concrete.Repositories
 {
-    public class FixtureRepository : IFixtureDal
+    public class FixtureModelRepository : IFixtureModelDal
     {
-        public void Delete(Fixture p)
+        public void Delete(FixtureModel p)
         {
             throw new NotImplementedException();
         }
 
-        public Fixture Get(Expression<Func<Fixture, bool>> filter)
+        public FixtureModel Get(Expression<Func<FixtureModel, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-        public void Insert(Fixture p)
+        public void Insert(FixtureModel p)
         {
             throw new NotImplementedException();
         }
 
-        public List<Fixture> List()
+        public List<FixtureModel> List()
         {
             throw new NotImplementedException();
         }
 
-        public List<Fixture> List(Expression<Func<Fixture, bool>> filter)
+        public List<FixtureModel> List(Expression<Func<FixtureModel, bool>> filter)
         {
             throw new NotImplementedException();
         }
 
-        public void Update(Fixture p)
+        public void Update(FixtureModel p)
         {
             throw new NotImplementedException();
         }

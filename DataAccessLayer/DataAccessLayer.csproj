@@ -51,6 +51,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IFixtureModelDal.cs" />
     <Compile Include="Abstract\IAdminDal.cs" />
     <Compile Include="Abstract\ICategoryDal.cs" />
     <Compile Include="Abstract\IFixtureDal.cs" />
@@ -65,6 +66,7 @@
     <Compile Include="Concrete\Repositories\AdminRepository.cs" />
     <Compile Include="Concrete\Repositories\BrandRepository.cs" />
     <Compile Include="Concrete\Repositories\CategoryRepository.cs" />
+    <Compile Include="Concrete\Repositories\FixtureModelRepository.cs" />
     <Compile Include="Concrete\Repositories\FixtureRepository.cs" />
     <Compile Include="Concrete\Repositories\JobsRepository.cs" />
     <Compile Include="Concrete\Repositories\ModelRepository.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="EntityFramework\EfBrandDal.cs" />
     <Compile Include="EntityFramework\EfCategoryDal.cs" />
     <Compile Include="EntityFramework\EfFixtureDal.cs" />
+    <Compile Include="EntityFramework\EfFixtureModelDal.cs" />
     <Compile Include="EntityFramework\EfJobsDal.cs" />
     <Compile Include="EntityFramework\EfModelDal.cs" />
     <Compile Include="EntityFramework\EfStoreDal.cs" />
@@ -89,9 +92,13 @@
     <Compile Include="Migrations\202307201136279_Up_Add_Jobs.designer.cs">
       <DependentUpon>202307201136279_Up_Add_Jobs.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202307210842588_Up_Brand_Icolletion.cs" />
-    <Compile Include="Migrations\202307210842588_Up_Brand_Icolletion.designer.cs">
-      <DependentUpon>202307210842588_Up_Brand_Icolletion.cs</DependentUpon>
+    <Compile Include="Migrations\202307240841479_Up_Fixture_1.cs" />
+    <Compile Include="Migrations\202307240841479_Up_Fixture_1.designer.cs">
+      <DependentUpon>202307240841479_Up_Fixture_1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202307240854195_Add_FixtureModel_1.cs" />
+    <Compile Include="Migrations\202307240854195_Add_FixtureModel_1.designer.cs">
+      <DependentUpon>202307240854195_Add_FixtureModel_1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -113,8 +120,11 @@
     <EmbeddedResource Include="Migrations\202307201136279_Up_Add_Jobs.resx">
       <DependentUpon>202307201136279_Up_Add_Jobs.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202307210842588_Up_Brand_Icolletion.resx">
-      <DependentUpon>202307210842588_Up_Brand_Icolletion.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202307240841479_Up_Fixture_1.resx">
+      <DependentUpon>202307240841479_Up_Fixture_1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202307240854195_Add_FixtureModel_1.resx">
+      <DependentUpon>202307240854195_Add_FixtureModel_1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

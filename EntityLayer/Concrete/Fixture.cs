@@ -28,13 +28,16 @@ namespace EntityLayer.Concrete
         [StringLength(1000)]
         public string FixtureDescription { get; set; }
 
-        public int UserId { get; set; }
-        public virtual User User { get; set; }
+        //public int UserId { get; set; }
+        //public virtual User User { get; set; }
 
         public int SubCategoryId { get; set; }
 
         public virtual SubCategory SubCategory { get; set; }
 
-        public bool UserStatus { get; set; }
+        public int ModelId { get; set; }
+
+        public virtual Model Model { get; set; }
+        public bool FixtureStatus { get; set; }
     }
 }

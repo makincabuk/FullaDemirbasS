@@ -17,5 +17,9 @@ namespace EntityLayer.Concrete
         public bool ModelStatus { get; set; }
         public int BrandID { get; set; }
         public virtual Brand Brand { get; set; }
+
+        public ICollection<Fixture> fixtures { get; set; }
+
+        public ICollection<FixtureModel> fixturemodels { get; set; }
     }
 }
