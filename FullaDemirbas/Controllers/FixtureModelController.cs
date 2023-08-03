@@ -19,30 +19,35 @@ namespace FullaDemirbas.Controllers
         public ActionResult Index()
         {
             var fixturemodels = FMM.GetList();
-
-            return View(fixturemodels);
+            FixtureModel a = new FixtureModel();
+            viewbagCreate();
+            return View(Tuple.Create(fixturemodels));
         }
-        [HttpGet]
-        public ActionResult AddFixtureModel()
+        void viewbagCreate()
         {
-            List<SelectListItem> valueSubCategory = (from x in SM.GetList()/*.Where(x => x.CategoryStatus == true)*/
-                                                  select new SelectListItem
-                                                  {
-                                                      Text = x.Category.CategoryName,
-                                                      Value = x.Category.CategoryID.ToString()
-                                                  }
+            List<SelectListItem> valueSubCategory = (from x in SM.GetList().Where(x => x.SubCategoryStatus == true)
+                                                     select new SelectListItem
+                                                     {
+                                                         Text = x.SubCategoryName,
+                                                         Value = x.SubCategoryID.ToString()
+                                                     }
                                                 ).ToList();
             ViewBag.VbSubCategory = valueSubCategory;
 
 
-            //List<SelectListItem> valueModel = (from x in MM.GetList()/*.Where(x => x.CategoryStatus == true)*/
-            //                                         select new SelectListItem
-            //                                         {
-            //                                             Text = x.ModelName,
-            //                                             Value = x.ModelID.ToString()
-            //                                         }
-            //                                    ).ToList();
-            //ViewBag.VbvalueModel = valueModel;
+            List<SelectListItem> valueModel = (from x in MM.GetList()/*.Where(x => x.CategoryStatus == true)*/
+                                               select new SelectListItem
+                                               {
+                                                   Text = x.ModelName,
+                                                   Value = x.ModelID.ToString()
+                                               }
+                                                ).ToList();
+            ViewBag.VbvalueModel = valueModel;
+        }
+        [HttpGet]
+        public ActionResult AddFixtureModel()
+        {
+             viewbagCreate();
             return View();
         }
         [HttpPost]
@@ -51,6 +56,20 @@ namespace FullaDemirbas.Controllers
             FMM.FixtureModelAdd(F);
             return RedirectToAction("Index");
         }
-        
+        public ActionResult DisableFixtureModel(int id)
+        {
+            var fixturemodelvalue = FMM.GetByID(id);
+            fixturemodelvalue.FixtureModelStatus = false;
+            FMM.FixtureModelUpdate(fixturemodelvalue);
+            return RedirectToAction("Index");
+        }
+        public ActionResult EnableFixtureModel(int id)
+        {
+            var fixturemodelvalue = FMM.GetByID(id);
+            fixturemodelvalue.FixtureModelStatus = true;
+            FMM.FixtureModelUpdate(fixturemodelvalue);
+            return RedirectToAction("Index");
+        }
+
     }
 }

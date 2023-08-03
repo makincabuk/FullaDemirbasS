@@ -1,17 +1,28 @@
 ﻿@using EntityLayer.Concrete
 @*@model1 List<FixtureModel>*@
 @*@model EntityLayer.Concrete.FixtureModel*@
-@model Tuple<List<FixtureModel>, List<SelectListItem>,FixtureModel>
+@model Tuple<List<FixtureModel>>
 @{ ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_AdminLayout.cshtml"; }
-
 
 
 <!DOCTYPE html>
 <html>
 
 <body class="hold-transition sidebar-mini">
-
+    <section class="content-header">
+        <p align="right">
+            <a href="/FixtureModel/AddFixtureModel" class="btn btn-info">Model Ekle</a>
+        </p>
+        <div class="container-fluid">
+            <div class="row mb-2">
+                <div class="col-sm-6">
+                    <h1>
+                    </h1>
+                </div>
+            </div>
+        </div><!-- /.container-fluid -->
+    </section>
 
     <section class="content">
         <!-- Default box -->
@@ -100,9 +111,8 @@
                         Pasif Et
                     </a>
                 </td>
-            </tr>
-}
-    }
+            </tr>}
+                        }
 
                     </tbody>
                 </table>
@@ -193,15 +203,14 @@
                         </i>
                         Düzenle
                     </a>
-                    <a class="btn btn-danger btn-sm" href="/FixtureModel/DisableFixtureModel/@item.FixtureModelId">
+                    <a class="btn btn-success btn-sm" href="/FixtureModel/EnableFixtureModel/@item.FixtureModelId">
                         <i class="fas fa-trash">
                         </i>
-                        Pasif Et
+                        Aktif Et
                     </a>
                 </td>
-            </tr>
-}
-    }
+            </tr>}
+                        }
 
                     </tbody>
                 </table>
@@ -211,3 +220,5 @@
         <!-- /.card -->
     </section>
     <br /><br />
+</body>
+</html>

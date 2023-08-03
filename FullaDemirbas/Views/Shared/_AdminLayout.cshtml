@@ -1,6 +1,4 @@
-﻿@{
-    Layout = null;
-}
+﻿@{ Layout = null; }
 
 <!DOCTYPE html>
 <html lang="en">
@@ -56,72 +54,139 @@ to get the desired effect
                     <ul class="nav nav-pills nav-sidebar flex-column" data-widget="treeview" role="menu" data-accordion="false">
                         <!-- Add icons to the links using the .nav-icon class
     with font-awesome or any other icon font library -->
-                        <li class="nav-item has-treeview menu-close">
-                            <a href="~/FixtureModel/Index" class="nav-link">
-                                <i class="nav-icon fas fa-air-freshener"></i>
+
+                        <li class="nav-header">İŞLER</li>
+                        <li class="nav-item">
+                            <a href="~/Jobs/" class="nav-link">
+                                <i class="nav-icon fa fa-user-alt"></i>
                                 <p>
-                                    Demirbaş Model
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview menu-close">
-                            <a href="~/AdminCategory/Index" class="nav-link">
-                                <i class="nav-icon fas fa-angle-down"></i>
-                                <p>
-                                    Kategoriler
-                                </p>
-                            </a>
-                        </li>
-                        <li class="nav-item has-treeview menu-close">
-                            <a href="~/SubCategory/Index" class="nav-link">
-                                <i class="nav-icon fas fa-angle-double-down"></i>
-                                <p>
-                                    Alt Kategoriler
+                                    İşlerim
+                                    @*<i class="fas fa-angle-left right"></i>*@
                                 </p>
                             </a>
                         </li>
 
-                        <li class="nav-item has-treeview menu-close">
-                            <a href="~/Brand/Index" class="nav-link">
-                                <i class="nav-icon fa fa-expand"></i>
+                        <li class="nav-header">DEMİRBAŞ İŞLEMLERİ</li>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-columns"></i>
                                 <p>
-                                    Markalar
+                                    Tanımlar
+                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="pages/mailbox/mailbox.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Demirbaşları Listele </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="pages/mailbox/compose.html" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Demirbaş Ekle</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/FixtureModel/Index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Demirbaş Model</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item has-treeview menu-close">
-                            <a href="~/Model/Index" class="nav-link">
-                                <i class="nav-icon fa fa-expand-alt"></i>
+                        <li class="nav-item">
+                            <a href="#" class="nav-link">
+                                <i class="nav-icon fas fa-copy"></i>
                                 <p>
-                                    Modeller
+                                    Parametreler
+                                    <i class="fas fa-angle-left right"></i>
                                 </p>
                             </a>
+                            <ul class="nav nav-treeview">
+                                <li class="nav-item">
+                                    <a href="~/AdminCategory/Index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>
+                                            Kategoriler
+                                        </p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/SubCategory/Index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Alt Kategoriler</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/Brand/Index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Markalar</p>
+                                    </a>
+                                </li>
+                                <li class="nav-item">
+                                    <a href="~/Model/Index" class="nav-link">
+                                        <i class="far fa-circle nav-icon"></i>
+                                        <p>Modeller</p>
+                                    </a>
+                                </li>
+                            </ul>
                         </li>
-                        <li class="nav-item has-treeview menu-close">
+
+                        <li class="nav-header">MAĞAZA İŞLEMLERİ</li>
+                        <li class="nav-item">
                             <a href="~/Store/" class="nav-link">
                                 <i class="nav-icon fa fa-store-alt"></i>
                                 <p>
                                     Mağazalar
+                                    @*<i class="fas fa-angle-left right"></i>*@
+                                </p>
+                            </a>
+                            @*<ul class="nav nav-treeview">
+                <li class="nav-item">
+                    <a href="pages/mailbox/mailbox.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Mağaza1 </p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="pages/mailbox/compose.html" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Mağaza2</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="~/FixtureModel/Index" class="nav-link">
+                        <i class="far fa-circle nav-icon"></i>
+                        <p>Mağaza3</p>
+                    </a>
+                </li>
+            </ul>*@
+                        </li>
+
+
+                        <li class="nav-header">KULLANICI İŞLEMLERİ</li>
+                        <li class="nav-item">
+                            <a href="~/User/" class="nav-link">
+                                <i class="nav-icon fa fa-user-alt"></i>
+                                <p>
+                                    Kullanıcılar
+                                    @*<i class="fas fa-angle-left right"></i>*@
                                 </p>
                             </a>
                         </li>
-                        <li class="nav-item has-treeview menu-close">
+
+                        @*<li class="nav-item has-treeview menu-close">
                             <a href="~/Jobs/" class="nav-link">
                                 <i class="nav-icon fa fa-window-close"></i>
                                 <p>
                                     İşler
                                 </p>
                             </a>
-                        </li>
-                        <li class="nav-item has-treeview menu-close">
-                            <a href="~/User/" class="nav-link">
-                                <i class="nav-icon fa fa-user-alt"></i>
-                                <p>
-                                    Kullanıcılar
-                                </p>
-                            </a>
-                        </li>
+                        </li>*@
+
                         <li>
                             @*<li class="nav-item">
                 <a href="pages/widgets.html" class="nav-link">
